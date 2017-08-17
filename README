@@ -1,0 +1,41 @@
+
+package: static time tickets
+Author: Sean Davis
+Date: August 17th 2017
+
+Summary:
+	Contained in this package is a basic Javascript version with dummyJSON. No links, work correctly.
+	Simply designed to be a demo for you to understand: 
+		a) the work involved
+		b) the setup that I currently have.
+
+Note: The configuration portion is not availabe.
+
+To run simply:
+npm install
+webpack
+
+and go into test.html,
+
+in the javascript section of test.html:
+you can place either:
+
+loadCalendar - to load the calendar.
+or, displayWorkTicketTables.
+Note: in the latter function the workticket_id is not used for this simple demo.
+
+
+Breakdown of JS organization:
+
+App.js: entry point, each view makes a call to a function in app.js, and as a result this is the script that must be included with every view.
+
+dataTable.js: the javascript file that is describes the higher-order component that does the addition and deletion logic for the tables.
+
+displayTable.js: the javascript file that holds the parent object for the tables, so that we can quickly make new tables without being concerned about additions or deletions
+
+employeeTable and equipmentTable: these two files hold the react components that make the calles to displayTable and dataTable.js, connecting the functions that reside in these files.
+
+projectComponent.js: this is where the equipment and employee tables are connected as well holds the ajax code that sends the data to the server. This file really needs to be completely rethought with
+ Redux. 
+
+loadLaravelData.js: This JavaScript module holds all of the logic for loading the laravel data into.
